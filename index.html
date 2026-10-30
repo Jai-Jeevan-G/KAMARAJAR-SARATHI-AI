@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kamarajar Sarathi AI · Every Student Deserves a Future.</title>
+<meta name="description" content="Kamarajar Sarathi AI is a digital guardian for students: learning, well-being, scholarships and future opportunities." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+
+<!-- WELCOME -->
+<main id="welcome" class="welcome" hidden>
+  <section class="w-hero">
+    <div class="w-logo">🛡️</div>
+    <h1>Kamarajar Sarathi <span>AI</span></h1>
+    <p class="tagline">“Every Student Deserves a Future.”</p>
+    <p class="sub">For students in Classes 9–12, their parents or guardians, educators and hostel wardens.</p>
+    <div class="w-float" aria-hidden="true"><span class="float f1">📘</span><span class="float f2">🎓</span><span class="float f3">⭐</span><span class="float f4">💡</span></div>
+  </section>
+  <section class="role-cards" aria-label="Choose how you want to use Kamarajar Sarathi AI">
+    <article class="role-card rc-student">
+      <div class="rc-ico">🎒</div><h2>Student</h2><p>Plan studies, practise questions, track well-being and find scholarships.</p>
+      <div class="rc-actions"><button class="btn primary" data-act="showAuth" data-role="student" data-mode="login">Log in</button><button class="btn ghost" data-act="showAuth" data-role="student" data-mode="register">Register</button></div>
+    </article>
+    <article class="role-card rc-parent">
+      <div class="rc-ico">👪</div><h2>Parent / Guardian</h2><p>See only what your child chooses to share, and cheer them on.</p>
+      <div class="rc-actions"><button class="btn primary" data-act="showAuth" data-role="parent" data-mode="login">Log in</button><button class="btn ghost" data-act="showAuth" data-role="parent" data-mode="register">Register</button></div>
+    </article>
+    <article class="role-card rc-edu">
+      <div class="rc-ico">🧑‍🏫</div><h2>Educator</h2><p>Support students who have approved you: assign practice, give feedback, celebrate wins.</p>
+      <div class="rc-actions"><button class="btn primary" data-act="showAuth" data-role="educator" data-mode="login">Log in</button><button class="btn ghost" data-act="showAuth" data-role="educator" data-mode="register">Register</button></div>
+    </article>
+    <article class="role-card rc-warden">
+      <div class="rc-ico">🏨</div><h2>Hostel Warden</h2><p>Add authorised health reports and follow-ups for students who approved you.</p>
+      <div class="rc-actions"><button class="btn primary" data-act="showAuth" data-role="warden" data-mode="login">Log in</button><button class="btn ghost" data-act="showAuth" data-role="warden" data-mode="register">Register</button></div>
+    </article>
+  </section>
+  <p class="w-note">🔐 Demo accounts live only in this browser. A real deployment needs a server that checks every login and permission.</p>
+</main>
+
+<!-- AUTH -->
+<main id="authView" class="authview" hidden>
+  <div class="auth-card" id="authCard"></div>
+</main>
+
+<!-- APP -->
+<div class="app" id="app" hidden>
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="brand"><div class="logo">🛡️</div><div><b>Kamarajar Sarathi AI</b><small>Every Student Deserves a Future</small></div></div>
+    <nav id="nav"></nav>
+    <div class="side-card"><div class="streak">🔥 <b id="streakNum">0</b>-day streak</div><small>Small steps count. You’re doing great!</small></div>
+  </aside>
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Toggle menu" data-act="toggleMenu">☰</button>
+      <div class="who" id="who"></div>
+      <div class="quick" id="quick"></div>
+      <div class="top-right">
+        <button class="icon-btn" id="bellBtn" aria-label="Notifications" data-act="bell">🔔<span class="dot" id="bellDot" hidden>0</span></button>
+        <button class="btn small ghost-dark" data-act="logout">Log out</button>
+      </div>
+    </header>
+    <div class="notif-panel" id="notifPanel" hidden><h4>Notifications</h4><ul id="notifList"></ul></div>
+    <main id="content" tabindex="-1"></main>
+  </div>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="close" data-act="closeModal" aria-label="Close">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+<script src="config.js"></script>
+<script src="core.js"></script>
+<script src="app.js"></script>
+<script src="views-student.js"></script>
+<script src="views-learning.js"></script>
+<script src="views-health.js"></script>
+<script src="views-scholarship.js"></script>
+<script src="views-people.js"></script>
+</body>
+</html>
